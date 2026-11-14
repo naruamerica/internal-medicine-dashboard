@@ -38,7 +38,7 @@ try:
     from src.ui.page_high_impact import render_high_impact_page
     from src.sync_service import sync_papers_for_years
 except ImportError:
-    from internal_medicine_dashboard.src.auth import check_authentication, logout
+    from src.auth import check_authentication, logout
     from internal_medicine_dashboard.src.ui.common import apply_custom_styles
     from internal_medicine_dashboard.src.ui.page_overview import render_overview_page
     from internal_medicine_dashboard.src.ui.page_annual import render_annual_page
