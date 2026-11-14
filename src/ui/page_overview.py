@@ -13,7 +13,7 @@ import pandas as pd
 from typing import Optional
 
 from src.ui.common import render_kpi_card, render_top_header
-from internal_medicine_dashboard.src.analytics_service import AnalyticsService
+from src.analytics_service import AnalyticsService
 from internal_medicine_dashboard.src.database import list_all_snapshots
 from internal_medicine_dashboard.src.ui.charts import render_bar_chart, render_line_chart
 
