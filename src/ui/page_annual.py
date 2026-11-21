@@ -10,11 +10,18 @@
 import streamlit as st
 import pandas as pd
 
-from internal_medicine_dashboard.src.ui.common import render_top_header
-from internal_medicine_dashboard.src.analytics_service import AnalyticsService
-from internal_medicine_dashboard.src.database import list_all_snapshots
-from internal_medicine_dashboard.src.exporter import export_dataframe_to_csv_bytes
-from internal_medicine_dashboard.src.ui.charts import render_bar_chart, render_line_chart
+try:
+    from src.ui.common import render_top_header
+    from src.analytics_service import AnalyticsService
+    from src.database import list_all_snapshots
+    from src.exporter import export_dataframe_to_csv_bytes
+    from src.ui.charts import render_bar_chart, render_line_chart
+except ImportError:
+    from internal_medicine_dashboard.src.ui.common import render_top_header
+    from internal_medicine_dashboard.src.analytics_service import AnalyticsService
+    from internal_medicine_dashboard.src.database import list_all_snapshots
+    from internal_medicine_dashboard.src.exporter import export_dataframe_to_csv_bytes
+    from internal_medicine_dashboard.src.ui.charts import render_bar_chart, render_line_chart
 
 
 def render_annual_page():

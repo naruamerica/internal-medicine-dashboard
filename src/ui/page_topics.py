@@ -11,10 +11,16 @@
 import streamlit as st
 import pandas as pd
 
-from internal_medicine_dashboard.src.ui.common import render_top_header
-from internal_medicine_dashboard.src.analytics_service import AnalyticsService
-from internal_medicine_dashboard.src.exporter import export_dataframe_to_csv_bytes
-from internal_medicine_dashboard.src.ui.charts import render_horizontal_bar, render_multi_line_chart, render_heatmap
+try:
+    from src.ui.common import render_top_header
+    from src.analytics_service import AnalyticsService
+    from src.exporter import export_dataframe_to_csv_bytes
+    from src.ui.charts import render_horizontal_bar, render_multi_line_chart, render_heatmap
+except ImportError:
+    from internal_medicine_dashboard.src.ui.common import render_top_header
+    from internal_medicine_dashboard.src.analytics_service import AnalyticsService
+    from internal_medicine_dashboard.src.exporter import export_dataframe_to_csv_bytes
+    from internal_medicine_dashboard.src.ui.charts import render_horizontal_bar, render_multi_line_chart, render_heatmap
 
 
 def render_topics_page():

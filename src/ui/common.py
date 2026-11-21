@@ -132,7 +132,10 @@ def render_top_header(current_page: str):
             unsafe_allow_html=True,
         )
         if st.button("Logout", key="logout_btn", use_container_width=True):
-            from internal_medicine_dashboard.src.auth import logout
+            try:
+                from src.auth import logout
+            except ImportError:
+                from internal_medicine_dashboard.src.auth import logout
             logout()
 
 
